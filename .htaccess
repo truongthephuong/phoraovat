@@ -1,0 +1,8 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{QUERY_STRING} ^.*=(ht|f)tp\://.*$ [NC]
+#RewriteRule .* - [F,L]
+#RewriteCond $1 !^(index\.php|application|robots\.txt|sites|batch|tooltip\.php)
+RewriteRule ^(.+)/?$ index.php/$1 [L]
